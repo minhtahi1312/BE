@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tpbNZbXQLdRUM6E99GOGHlqHvYi0hVeDnBLJZx/baF4=",
+  "Source": "SWP.CourtBooking.API",
+  "BasePath": "_content/SWP.CourtBooking.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

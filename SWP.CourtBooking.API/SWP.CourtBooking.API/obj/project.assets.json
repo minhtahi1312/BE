@@ -1589,6 +1589,20 @@
             "rid": "win"
           }
         }
+      },
+      "SWP.CourtBooking.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6"
+        },
+        "compile": {
+          "bin/placeholder/SWP.CourtBooking.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SWP.CourtBooking.Repository.dll": {}
+        }
       }
     }
   },
@@ -4512,6 +4526,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "SWP.CourtBooking.Repository/1.0.0": {
+      "type": "project",
+      "path": "../SWP.CourtBooking.Repository/SWP.CourtBooking.Repository.csproj",
+      "msbuildProject": "../SWP.CourtBooking.Repository/SWP.CourtBooking.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4520,6 +4539,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.6",
+      "SWP.CourtBooking.Repository >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -4549,7 +4569,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Github\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj": {
+              "projectPath": "E:\\Github\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

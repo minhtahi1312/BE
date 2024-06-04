@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("2836ff51-ab98-48b9-afaa-084ce521a009")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("SWP.CourtBooking.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9f614d85e89eb91b03b55a756ce5641d7a491cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04b0b1d548d8a1d41b280215d2b37a8b4567f7b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SWP.CourtBooking.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SWP.CourtBooking.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
