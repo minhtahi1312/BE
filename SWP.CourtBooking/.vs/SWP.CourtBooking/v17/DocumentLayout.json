@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "E:\\Github\\BE\\SWP.CourtBooking\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|e:\\github\\be\\swp.courtbooking\\swp.courtbooking.repository\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|solutionrelative:swp.courtbooking.repository\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|e:\\github\\be\\swp.courtbooking\\swp.courtbooking.repository\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|solutionrelative:swp.courtbooking.repository\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|e:\\github\\be\\swp.courtbooking\\swp.courtbooking.repository\\models\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|solutionrelative:swp.courtbooking.repository\\models\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|e:\\github\\be\\swp.courtbooking\\swp.courtbooking.repository\\swp.courtbooking.repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|solutionrelative:swp.courtbooking.repository\\swp.courtbooking.repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|e:\\github\\be\\swp.courtbooking\\swp.courtbooking.repository\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{819579DA-3AE3-4F65-A5DC-3A8F4A0DF668}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|solutionrelative:swp.courtbooking.repository\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,19 +31,44 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "E:\\Github\\BE\\SWP.CourtBooking\\SWP.CourtBooking.Repository\\Models\\Booking.cs",
-              "RelativeDocumentMoniker": "SWP.CourtBooking.Repository\\Models\\Booking.cs",
-              "ToolTip": "E:\\Github\\BE\\SWP.CourtBooking\\SWP.CourtBooking.Repository\\Models\\Booking.cs",
-              "RelativeToolTip": "SWP.CourtBooking.Repository\\Models\\Booking.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAcAAAA",
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "E:\\Github\\BE\\SWP.CourtBooking\\SWP.CourtBooking.Repository\\Models\\Transaction.cs",
+              "RelativeDocumentMoniker": "SWP.CourtBooking.Repository\\Models\\Transaction.cs",
+              "ToolTip": "E:\\Github\\BE\\SWP.CourtBooking\\SWP.CourtBooking.Repository\\Models\\Transaction.cs",
+              "RelativeToolTip": "SWP.CourtBooking.Repository\\Models\\Transaction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T09:52:18.111Z",
+              "WhenOpened": "2024-06-01T09:58:21.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Wallet.cs",
+              "DocumentMoniker": "E:\\Github\\BE\\SWP.CourtBooking\\SWP.CourtBooking.Repository\\Models\\Wallet.cs",
+              "RelativeDocumentMoniker": "SWP.CourtBooking.Repository\\Models\\Wallet.cs",
+              "ToolTip": "E:\\Github\\BE\\SWP.CourtBooking\\SWP.CourtBooking.Repository\\Models\\Wallet.cs",
+              "RelativeToolTip": "SWP.CourtBooking.Repository\\Models\\Wallet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T09:58:12.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "E:\\Github\\BE\\SWP.CourtBooking\\SWP.CourtBooking.Repository\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "SWP.CourtBooking.Repository\\Models\\Booking.cs",
+              "ToolTip": "E:\\Github\\BE\\SWP.CourtBooking\\SWP.CourtBooking.Repository\\Models\\Booking.cs",
+              "RelativeToolTip": "SWP.CourtBooking.Repository\\Models\\Booking.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T09:52:18.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SWP.CourtBooking.Repository.csproj",
               "DocumentMoniker": "E:\\Github\\BE\\SWP.CourtBooking\\SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj",
               "RelativeDocumentMoniker": "SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj",
