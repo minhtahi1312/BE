@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWP.CourtBooking.API", "SWP.CourtBooking.API\SWP.CourtBooking.API.csproj", "{61FCCA22-41B0-4238-9163-2B63FE0D39AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWP.CourtBooking.Repository", "SWP.CourtBooking.Repository\SWP.CourtBooking.Repository.csproj", "{3CEEFBF5-424B-4000-B7CD-E8475D43A465}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61FCCA22-41B0-4238-9163-2B63FE0D39AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FCCA22-41B0-4238-9163-2B63FE0D39AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FCCA22-41B0-4238-9163-2B63FE0D39AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FCCA22-41B0-4238-9163-2B63FE0D39AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CEEFBF5-424B-4000-B7CD-E8475D43A465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CEEFBF5-424B-4000-B7CD-E8475D43A465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CEEFBF5-424B-4000-B7CD-E8475D43A465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CEEFBF5-424B-4000-B7CD-E8475D43A465}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D2C9A4B-0838-4B91-9931-4EFBE2A53076}
+	EndGlobalSection
+EndGlobal
