@@ -37,17 +37,17 @@ public partial class CourtBookingDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("server =MSI; database = CourtBookingDB;uid=sa;pwd=12345;TrustServerCertificate=true");
+        => optionsBuilder.UseSqlServer("server =localhost; database = CourtBookingDB;uid=sa;pwd=12345;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.BookingId).HasName("PK__Booking__35ABFDE0E73F4A23");
+            entity.HasKey(e => e.BookingId).HasName("PK__Booking__35ABFDE0520DB3AD");
 
             entity.ToTable("Booking");
 
-            entity.HasIndex(e => e.Code, "UQ__Booking__A25C5AA7B5AC0B82").IsUnique();
+            entity.HasIndex(e => e.Code, "UQ__Booking__A25C5AA7912E9A58").IsUnique();
 
             entity.Property(e => e.BookingId)
                 .HasMaxLength(30)
@@ -68,16 +68,16 @@ public partial class CourtBookingDbContext : DbContext
 
             entity.HasOne(d => d.CourtCluster).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.CourtClusterId)
-                .HasConstraintName("FK__Booking__CourtCl__6477ECF3");
+                .HasConstraintName("FK__Booking__CourtCl__52593CB8");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.CustomerId)
-                .HasConstraintName("FK__Booking__Custome__6383C8BA");
+                .HasConstraintName("FK__Booking__Custome__5165187F");
         });
 
         modelBuilder.Entity<BookingDetail>(entity =>
         {
-            entity.HasKey(e => e.BookingDetailId).HasName("PK__BookingD__83B40D2BBD533F55");
+            entity.HasKey(e => e.BookingDetailId).HasName("PK__BookingD__83B40D2B10E4C834");
 
             entity.ToTable("BookingDetail");
 
@@ -92,17 +92,17 @@ public partial class CourtBookingDbContext : DbContext
 
             entity.HasOne(d => d.Booking).WithMany(p => p.BookingDetails)
                 .HasForeignKey(d => d.BookingId)
-                .HasConstraintName("FK__BookingDe__Booki__6B24EA82");
+                .HasConstraintName("FK__BookingDe__Booki__5535A963");
 
             entity.HasOne(d => d.Slot).WithMany(p => p.BookingDetails)
                 .HasForeignKey(d => d.SlotId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__BookingDe__Slot___6C190EBB");
+                .HasConstraintName("FK__BookingDe__Slot___5629CD9C");
         });
 
         modelBuilder.Entity<Court>(entity =>
         {
-            entity.HasKey(e => e.CourtId).HasName("PK__Court__6EF99EFE3A0CE2D8");
+            entity.HasKey(e => e.CourtId).HasName("PK__Court__6EF99EFEB2B12972");
 
             entity.ToTable("Court");
 
@@ -118,12 +118,12 @@ public partial class CourtBookingDbContext : DbContext
 
             entity.HasOne(d => d.CourtCluster).WithMany(p => p.Courts)
                 .HasForeignKey(d => d.CourtClusterId)
-                .HasConstraintName("FK__Court__CourtClus__5165187F");
+                .HasConstraintName("FK__Court__CourtClus__3F466844");
         });
 
         modelBuilder.Entity<CourtCluster>(entity =>
         {
-            entity.HasKey(e => e.CourtClusterId).HasName("PK__CourtClu__9485F8608D1C390B");
+            entity.HasKey(e => e.CourtClusterId).HasName("PK__CourtClu__9485F8609D5CBDEF");
 
             entity.ToTable("CourtCluster");
 
@@ -142,20 +142,20 @@ public partial class CourtBookingDbContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.CourtClusters)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__CourtClus__User___4E88ABD4");
+                .HasConstraintName("FK__CourtClus__User___3C69FB99");
         });
 
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.CustomerId).HasName("PK__Customer__8CB286B9C4198CB8");
+            entity.HasKey(e => e.CustomerId).HasName("PK__Customer__8CB286B970A0E946");
 
             entity.ToTable("Customer");
 
-            entity.HasIndex(e => e.Username, "UQ__Customer__536C85E43447B979").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Customer__536C85E41710F744").IsUnique();
 
-            entity.HasIndex(e => e.Phone, "UQ__Customer__5C7E359ED587B921").IsUnique();
+            entity.HasIndex(e => e.Phone, "UQ__Customer__5C7E359EA816AE0F").IsUnique();
 
-            entity.HasIndex(e => e.Email, "UQ__Customer__A9D10534649BCE61").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Customer__A9D10534ADDEC747").IsUnique();
 
             entity.Property(e => e.CustomerId)
                 .HasMaxLength(30)
@@ -175,11 +175,11 @@ public partial class CourtBookingDbContext : DbContext
 
         modelBuilder.Entity<Deposit>(entity =>
         {
-            entity.HasKey(e => e.DepositId).HasName("PK__Deposit__7C0DCE8DC5AD8F45");
+            entity.HasKey(e => e.DepositId).HasName("PK__Deposit__7C0DCE8DC77C034D");
 
             entity.ToTable("Deposit");
 
-            entity.HasIndex(e => e.VnpayCode, "UQ__Deposit__068FECA5E6598277").IsUnique();
+            entity.HasIndex(e => e.VnpayCode, "UQ__Deposit__068FECA576484073").IsUnique();
 
             entity.Property(e => e.DepositId)
                 .HasMaxLength(30)
@@ -195,12 +195,12 @@ public partial class CourtBookingDbContext : DbContext
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Deposits)
                 .HasForeignKey(d => d.CustomerId)
-                .HasConstraintName("FK__Deposit__Custome__5FB337D6");
+                .HasConstraintName("FK__Deposit__Custome__4D94879B");
         });
 
         modelBuilder.Entity<Slot>(entity =>
         {
-            entity.HasKey(e => e.SlotId).HasName("PK__Slot__1AE2AAAE7F0C0268");
+            entity.HasKey(e => e.SlotId).HasName("PK__Slot__1AE2AAAE2D27F6B0");
 
             entity.ToTable("Slot");
 
@@ -213,12 +213,12 @@ public partial class CourtBookingDbContext : DbContext
 
             entity.HasOne(d => d.Court).WithMany(p => p.Slots)
                 .HasForeignKey(d => d.CourtId)
-                .HasConstraintName("FK__Slot__Court_ID__5441852A");
+                .HasConstraintName("FK__Slot__Court_ID__4222D4EF");
         });
 
         modelBuilder.Entity<Transaction>(entity =>
         {
-            entity.HasKey(e => e.TransactionId).HasName("PK__Transact__9A8D5625A388174D");
+            entity.HasKey(e => e.TransactionId).HasName("PK__Transact__9A8D5625DA220714");
 
             entity.ToTable("Transaction");
 
@@ -239,30 +239,30 @@ public partial class CourtBookingDbContext : DbContext
 
             entity.HasOne(d => d.Booking).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.BookingId)
-                .HasConstraintName("FK__Transacti__Booki__76969D2E");
+                .HasConstraintName("FK__Transacti__Booki__59063A47");
 
             entity.HasOne(d => d.Deposit).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.DepositId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Transacti__Depos__787EE5A0");
+                .HasConstraintName("FK__Transacti__Depos__5AEE82B9");
 
             entity.HasOne(d => d.Wallet).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.WalletId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Transacti__Walle__778AC167");
+                .HasConstraintName("FK__Transacti__Walle__59FA5E80");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__User__206D9190D2A0E31D");
+            entity.HasKey(e => e.UserId).HasName("PK__User__206D91908CB2D015");
 
             entity.ToTable("User");
 
-            entity.HasIndex(e => e.Username, "UQ__User__536C85E437280C07").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__User__536C85E4EBBF40CF").IsUnique();
 
-            entity.HasIndex(e => e.Phone, "UQ__User__5C7E359E484BD2C3").IsUnique();
+            entity.HasIndex(e => e.Phone, "UQ__User__5C7E359E722A7963").IsUnique();
 
-            entity.HasIndex(e => e.Email, "UQ__User__A9D105340A8CA761").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__User__A9D10534AA21FE60").IsUnique();
 
             entity.Property(e => e.UserId)
                 .HasMaxLength(30)
@@ -279,7 +279,7 @@ public partial class CourtBookingDbContext : DbContext
 
         modelBuilder.Entity<Wallet>(entity =>
         {
-            entity.HasKey(e => e.WalletId).HasName("PK__Wallet__ED453B3B731C3EA1");
+            entity.HasKey(e => e.WalletId).HasName("PK__Wallet__ED453B3BEE76FBF0");
 
             entity.ToTable("Wallet");
 
@@ -293,7 +293,7 @@ public partial class CourtBookingDbContext : DbContext
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Wallets)
                 .HasForeignKey(d => d.CustomerId)
-                .HasConstraintName("FK__Wallet__Customer__5BE2A6F2");
+                .HasConstraintName("FK__Wallet__Customer__49C3F6B7");
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -240,4 +240,69 @@ CREATE TABLE [Transaction] (
     FOREIGN KEY (Wallet_ID) REFERENCES Wallet(Wallet_ID),
     FOREIGN KEY (Deposit_ID) REFERENCES Deposit(Deposit_ID) 
 );
->>>>>>> 1284f05162f3bcd2659ccbd1c8e8c9fa44a6b582
+
+USE CourtBookingDB;
+
+-- Insert data into User table
+INSERT INTO [User] (User_ID, Name, Email, Phone, Address, Birthday, Gender, isActive, Role, Username, Password)
+VALUES 
+('U001', 'John Doe', 'johndoe@example.com', '1234567890', '123 Main St', '1985-05-15', 1, 1, 'Admin', 'johndoe', 'password1'),
+('U002', 'Jane Smith', 'janesmith@example.com', '0987654321', '456 Elm St', '1990-10-20', 0, 1, 'Manager', 'janesmith', 'password2');
+
+-- Insert data into Customer table
+INSERT INTO Customer (Customer_ID, Name, Email, Phone, Address, Birthday, Gender, isActive, Username, Password)
+VALUES 
+('C001', 'Alice Johnson', 'alicej@example.com', '1122334455', '789 Oak St', '1992-02-25', 'F', 1, 'alicej', 'password3'),
+('C002', 'Bob Brown', 'bobb@example.com', '5544332211', '321 Pine St', '1988-08-12', 'M', 1, 'bobb', 'password4');
+
+-- Insert data into CourtCluster table
+INSERT INTO CourtCluster (CourtCluster_ID, Name, Price, Description, Status, Location, Image, User_ID)
+VALUES 
+('CC001', 'Central Park Courts', 50.00, 'Courts at Central Park', 'Available', 'Central Park, NYC', 'image1.jpg', 'U001'),
+('CC002', 'Westside Courts', 40.00, 'Courts at Westside', 'Available', 'Westside, NYC', 'image2.jpg', 'U002');
+
+-- Insert data into Court table
+INSERT INTO Court (Court_ID, Name, Status, Description, CourtCluster_ID)
+VALUES 
+('CT001', 'Court 1', 'Available', 'First court', 'CC001'),
+('CT002', 'Court 2', 'Available', 'Second court', 'CC001'),
+('CT003', 'Court A', 'Available', 'First court in Westside', 'CC002');
+
+-- Insert data into Slot table
+INSERT INTO Slot (Slot_ID, Date, StartTime, EndTime, Court_ID)
+VALUES 
+(1, '2024-06-10', '08:00', '09:00', 'CT001'),
+(2, '2024-06-10', '09:00', '10:00', 'CT001'),
+(3, '2024-06-10', '08:00', '09:00', 'CT002');
+
+-- Insert data into Wallet table
+INSERT INTO Wallet (Wallet_ID, Customer_ID, Amount)
+VALUES 
+('W001', 'C001', 100.00),
+('W002', 'C002', 50.00);
+
+-- Insert data into Deposit table
+INSERT INTO Deposit (Deposit_ID, Customer_ID, Amount, VNPayCode, Time)
+VALUES 
+('D001', 'C001', 50.00, 'VN123456', '2024-06-01 10:00:00'),
+('D002', 'C002', 30.00, 'VN654321', '2024-06-02 11:00:00');
+
+-- Insert data into Booking table
+INSERT INTO Booking (Booking_ID, Code, Status, Created_at, Customer_ID, CourtCluster_ID, FromTime, ToTime)
+VALUES 
+('B001', 'BK12345', 'Confirmed', '2024-06-03 09:00:00', 'C001', 'CC001', '2024-06-10 08:00:00', '2024-06-10 10:00:00'),
+('B002', 'BK54321', 'Confirmed', '2024-06-04 10:00:00', 'C002', 'CC001', '2024-06-10 09:00:00', '2024-06-10 10:00:00');
+
+-- Insert data into BookingDetail table
+INSERT INTO BookingDetail (BookingDetail_ID, Booking_ID, Slot_ID, Price)
+VALUES 
+('BD001', 'B001', 1, 50.00),
+('BD002', 'B001', 2, 50.00),
+('BD003', 'B002', 2, 40.00);
+
+-- Insert data into Transaction table
+INSERT INTO [Transaction] (Transaction_ID, TotalSlot, TotalPrice, Status, Booking_ID, Wallet_ID, Deposit_ID)
+VALUES 
+('T001', 2, 100.00, 'Completed', 'B001', 'W001', 'D001'),
+('T002', 1, 40.00, 'Completed', 'B002', 'W002', 'D002');
+
