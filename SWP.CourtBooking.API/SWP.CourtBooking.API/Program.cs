@@ -39,6 +39,7 @@ namespace SWP.CourtBooking.API
 
 
             app.MapControllers();
+            
 
             app.Run();
         }
