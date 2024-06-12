@@ -59,7 +59,7 @@ namespace SWP.CourtBooking.Repository.Repository
             return query.ToList();
         }
 
-        public virtual TEntity GetByID(int id)
+        public virtual TEntity GetByID(String id)
         {
             return dbSet.Find(id);
         }
@@ -101,5 +101,6 @@ namespace SWP.CourtBooking.Repository.Repository
             return query.Count();
         }
 
+        
     }
 }

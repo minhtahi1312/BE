@@ -21,5 +21,14 @@ namespace SWP.CourtBooking.API.Controllers
             var transacstions = _unitOfWork.TransactionRepository.Get();
             return Ok(transacstions);
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteTransactions(String id)
+        {
+            var existedTransactionEntity = _unitOfWork.TransactionRepository.GetByID(id);
+            _unitOfWork.TransactionRepository.Delete(existedTransactionEntity);
+            _unitOfWork.Save();
+            return Ok();
+        }
     }
 }

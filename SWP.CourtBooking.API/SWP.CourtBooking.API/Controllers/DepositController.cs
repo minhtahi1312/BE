@@ -21,5 +21,14 @@ namespace SWP.CourtBooking.API.Controllers
             var deposits = _unitOfWork.DepositRepository.Get();
             return Ok(deposits);
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteDeposits(String id)
+        {
+            var existedDepositEntity = _unitOfWork.DepositRepository.GetByID(id);
+            _unitOfWork.DepositRepository.Delete(existedDepositEntity);
+            _unitOfWork.Save();
+            return Ok();
+        }
     }
 }

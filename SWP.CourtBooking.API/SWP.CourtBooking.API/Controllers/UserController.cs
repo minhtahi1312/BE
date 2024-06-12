@@ -21,5 +21,14 @@ namespace SWP.CourtBooking.API.Controllers
             var users = _unitOfWork.UserRepository.Get();
             return Ok(users);
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteUsers(String id)
+        {
+            var existedUserEntity = _unitOfWork.UserRepository.GetByID(id);
+            _unitOfWork.UserRepository.Delete(existedUserEntity);
+            _unitOfWork.Save();
+            return Ok();
+        }
     }
 }

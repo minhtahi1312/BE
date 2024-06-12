@@ -21,5 +21,14 @@ namespace SWP.CourtBooking.API.Controllers
             var slots = _unitOfWork.SlotRepository.Get();
             return Ok(slots);
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteSlots(String id)
+        {
+            var existedSlotEntity = _unitOfWork.SlotRepository.GetByID(id);
+            _unitOfWork.SlotRepository.Delete(existedSlotEntity);
+            _unitOfWork.Save();
+            return Ok();
+        }
     }
 }

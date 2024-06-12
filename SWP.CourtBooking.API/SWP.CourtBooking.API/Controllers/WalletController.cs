@@ -21,5 +21,14 @@ namespace SWP.CourtBooking.API.Controllers
             var wallets = _unitOfWork.WalletRepository.Get();
             return Ok(wallets);
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteWallets(String id)
+        {
+            var existedWalletEntity = _unitOfWork.WalletRepository.GetByID(id);
+            _unitOfWork.WalletRepository.Delete(existedWalletEntity);
+            _unitOfWork.Save();
+            return Ok();
+        }
     }
 }
