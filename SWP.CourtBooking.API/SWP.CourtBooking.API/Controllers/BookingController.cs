@@ -22,17 +22,12 @@ namespace SWP.CourtBooking.API.Controllers
             var bookings = _unitOfWork.BookingRepository.Get();
             return Ok(bookings);
         }
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var responseCategories = _unitOfWork.BookingRepository.Get();
-            return Ok(responseCategories);
-        }
+        
         [HttpGet("{id}")]
-        public IActionResult GetCategoryById(int id)
+        public ActionResult GetBookingById(string id)
         {
-            var responseCategories = _unitOfWork.BookingRepository.GetByID(id);
-            return Ok(responseCategories);
+            var responseBooking = _unitOfWork.BookingRepository.GetByID(id);
+            return Ok(responseBooking);
         }
     }
 }
