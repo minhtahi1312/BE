@@ -21,5 +21,17 @@ namespace SWP.CourtBooking.API.Controllers
             var bookingDetails = _unitOfWork.BookingDetailRepository.Get();
             return Ok(bookingDetails);
         }
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var responseCategories = _unitOfWork.BookingRepository.Get();
+            return Ok(responseCategories);
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetCategoryById(int id)
+        {
+            var responseCategories = _unitOfWork.BookingRepository.GetByID(id);
+            return Ok(responseCategories);
+        }
     }
 }

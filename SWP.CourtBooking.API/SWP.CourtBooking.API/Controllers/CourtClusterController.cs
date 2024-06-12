@@ -21,5 +21,17 @@ namespace SWP.CourtBooking.API.Controllers
             var courtClusters = _unitOfWork.CourtClusterRepository.Get();
             return Ok(courtClusters);
         }
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var responseCategories = _unitOfWork.BookingRepository.Get();
+            return Ok(responseCategories);
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetCategoryById(int id)
+        {
+            var responseCategories = _unitOfWork.BookingRepository.GetByID(id);
+            return Ok(responseCategories);
+        }
     }
 }
