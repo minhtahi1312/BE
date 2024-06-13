@@ -31,5 +31,11 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.Save();
             return Ok();
         }
+        [HttpGet("{id}")]
+        public ActionResult GetBookingById(string id)
+        {
+            var responseBooking = _unitOfWork.BookingRepository.GetByID(id);
+            return Ok(responseBooking);
+        }
     }
 }
