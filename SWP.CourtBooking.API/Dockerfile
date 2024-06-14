@@ -20,4 +20,4 @@ RUN dotnet publish "SWP.CourtBooking.API.csproj" -c ${BUILD_CONFIGURATION} -o /a
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT [ "dotnet","SWP.CourtBooking.API.csproj.dll"]
+ENTRYPOINT [ "dotnet","SWP.CourtBooking.API.dll"]
