@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SWP.CourtBooking.API.Models.BookingModel;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -31,11 +32,31 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.Save();
             return Ok();
         }
+
         [HttpGet("{id}")]
         public ActionResult GetBookingById(string id)
         {
             var responseBooking = _unitOfWork.BookingRepository.GetByID(id);
             return Ok(responseBooking);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateProduct(String id, RequestCreateBookingModel requestCreateBookingModel)
+        {
+            var existedBooking = _unitOfWork.BookingRepository.GetByID(id);
+            if (existedBooking != null)
+            {
+                existedBooking.Code = requestCreateBookingModel.Code;
+                existedBooking.Status = requestCreateBookingModel.Status;
+                existedBooking.CreatedAt = requestCreateBookingModel.CreatedAt;
+                existedBooking.CustomerId = requestCreateBookingModel.CustomerId;
+                existedBooking.CourtClusterId = requestCreateBookingModel.CourtClusterId;
+                existedBooking.FromTime = requestCreateBookingModel.FromTime;
+                existedBooking.ToTime = requestCreateBookingModel.ToTime;
+            }
+            _unitOfWork.BookingRepository.Update(existedBooking);
+            _unitOfWork.Save();
+            return Ok();
         }
     }
 }

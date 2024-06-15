@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SWP.CourtBooking.API.Models.CourtClusterModel;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -30,11 +31,31 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.Save();
             return Ok();
         }
+
         [HttpGet("{id}")]
-        public ActionResult GetBookingById(string id)
+        public ActionResult GetCourtClusterById(string id)
         {
-            var responseBooking = _unitOfWork.BookingRepository.GetByID(id);
-            return Ok(responseBooking);
+            var responseCourtCluster = _unitOfWork.CourtClusterRepository.GetByID(id);
+            return Ok(responseCourtCluster);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateCourtCluster(String id, RequestCreateCourtClusterModel requestModel)
+        {
+            var existedCourtCluster = _unitOfWork.CourtClusterRepository.GetByID(id);
+            if(existedCourtCluster != null)
+            {
+                existedCourtCluster.Name = requestModel.Name;
+                existedCourtCluster.Price = requestModel.Price;
+                existedCourtCluster.Description = requestModel.Description;
+                existedCourtCluster.Status = requestModel.Status;
+                existedCourtCluster.Location = requestModel.Location;
+                existedCourtCluster.Image = requestModel.Image;
+                existedCourtCluster.UserId = requestModel.UserId;
+            }
+            _unitOfWork.CourtClusterRepository.Update(existedCourtCluster);
+            _unitOfWork.Save();
+            return Ok();
         }
     }
 }

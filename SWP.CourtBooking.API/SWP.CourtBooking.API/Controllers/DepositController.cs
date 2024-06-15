@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SWP.CourtBooking.API.Models.DepositModel;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -30,11 +31,28 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.Save();
             return Ok();
         }
+
         [HttpGet("{id}")]
-        public ActionResult GetBookingById(string id)
+        public ActionResult GetDepositById(string id)
         {
-            var responseBooking = _unitOfWork.BookingRepository.GetByID(id);
-            return Ok(responseBooking);
+            var responseDeposit = _unitOfWork.DepositRepository.GetByID(id);
+            return Ok(responseDeposit);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateDeposit(String id, RequestCreateDepositModel requestModel)
+        {
+            var existedDeposit = _unitOfWork.DepositRepository.GetByID(id);
+            if(existedDeposit != null)
+            {
+                existedDeposit.CustomerId = requestModel.CustomerId;
+                existedDeposit.Amount = requestModel.Amount;
+                existedDeposit.VnpayCode = requestModel.VnpayCode;
+                existedDeposit.Time = requestModel.Time;
+            }
+            _unitOfWork.DepositRepository.Update(existedDeposit);
+            _unitOfWork.Save();
+            return Ok();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SWP.CourtBooking.API.Models.CourtModel;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -30,11 +31,28 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.Save();
             return Ok();
         }
+
         [HttpGet("{id}")]
-        public ActionResult GetBookingById(string id)
+        public ActionResult GetCourtById(string id)
         {
-            var responseBooking = _unitOfWork.BookingRepository.GetByID(id);
-            return Ok(responseBooking);
+            var responseCourt = _unitOfWork.CourtRepository.GetByID(id);
+            return Ok(responseCourt);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateCourt(String id, RequestCreateCourtModel requestModel)
+        {
+            var existedCourt = _unitOfWork.CourtRepository.GetByID(id);
+            if(existedCourt != null)
+            {
+                existedCourt.Name = requestModel.Name;
+                existedCourt.Status = requestModel.Status;
+                existedCourt.Description = requestModel.Description;
+                existedCourt.CourtClusterId = requestModel.CourtClusterId;
+            }
+            _unitOfWork.CourtRepository.Update(existedCourt);
+            _unitOfWork.Save();
+            return Ok();
         }
     }
 }

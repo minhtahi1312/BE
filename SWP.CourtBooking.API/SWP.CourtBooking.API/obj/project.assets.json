@@ -4544,32 +4544,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ngkho\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dowloads\\Summer2024\\SWP391\\project\\BE2\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj",
+      "projectUniqueName": "E:\\Github\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj",
       "projectName": "SWP.CourtBooking.API",
-      "projectPath": "D:\\Dowloads\\Summer2024\\SWP391\\project\\BE2\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Dowloads\\Summer2024\\SWP391\\project\\BE2\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\obj\\",
+      "projectPath": "E:\\Github\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj",
+      "packagesPath": "C:\\Users\\ngkho\\.nuget\\packages\\",
+      "outputPath": "E:\\Github\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ngkho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Dowloads\\Summer2024\\SWP391\\project\\BE2\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj": {
-              "projectPath": "D:\\Dowloads\\Summer2024\\SWP391\\project\\BE2\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj"
+            "E:\\Github\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj": {
+              "projectPath": "E:\\Github\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj"
             }
           }
         }
@@ -4633,7 +4635,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

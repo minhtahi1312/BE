@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using SWP.CourtBooking.API.Models.UserModel;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -30,11 +30,34 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.Save();
             return Ok();
         }
+
         [HttpGet("{id}")]
-        public ActionResult GetBookingById(string id)
+        public ActionResult GetUserById(string id)
         {
-            var responseBooking = _unitOfWork.BookingRepository.GetByID(id);
-            return Ok(responseBooking);
+            var responseUser = _unitOfWork.UserRepository.GetByID(id);
+            return Ok(responseUser);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateUser(String id, RequestCreateUserModel requestModel)
+        {
+            var existedUser = _unitOfWork.UserRepository.GetByID(id);
+            if (existedUser != null)
+            {
+                existedUser.Name = requestModel.Name;
+                existedUser.Email = requestModel.Email;
+                existedUser.Phone = requestModel.Phone;
+                existedUser.Address = requestModel.Address;
+                existedUser.Birthday = requestModel.Birthday;
+                existedUser.Gender = requestModel.Gender;
+                existedUser.IsActive = requestModel.IsActive;
+                existedUser.Role = requestModel.Role;
+                existedUser.Username = requestModel.Username;
+                existedUser.Password = requestModel.Password;
+            }
+            _unitOfWork.UserRepository.Update(existedUser);
+            _unitOfWork.Save();
+            return Ok();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SWP.CourtBooking.API.Models.SlotModel;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -30,11 +31,28 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.Save();
             return Ok();
         }
+
         [HttpGet("{id}")]
-        public ActionResult GetBookingById(string id)
+        public ActionResult GetSlotById(string id)
         {
-            var responseBooking = _unitOfWork.BookingRepository.GetByID(id);
-            return Ok(responseBooking);
+            var responseSlot = _unitOfWork.SlotRepository.GetByID(id);
+            return Ok(responseSlot);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateSlot(String id, RequestCreateSlotModel requestModel)
+        {
+            var existedSlot = _unitOfWork.SlotRepository.GetByID(id);
+            if(existedSlot != null)
+            {
+                existedSlot.Date = requestModel.Date;
+                existedSlot.StartTime = requestModel.StartTime;
+                existedSlot.EndTime = requestModel.EndTime;
+                existedSlot.CourtId = requestModel.CourtId;
+            }
+            _unitOfWork.SlotRepository.Update(existedSlot);
+            _unitOfWork.Save();
+            return Ok();
         }
     }
 }

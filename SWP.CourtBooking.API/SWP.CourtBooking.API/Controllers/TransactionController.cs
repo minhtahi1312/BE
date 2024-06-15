@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SWP.CourtBooking.API.Models.TransactionModel;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -30,11 +31,30 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.Save();
             return Ok();
         }
+
         [HttpGet("{id}")]
-        public ActionResult GetBookingById(string id)
+        public ActionResult GetTransactionById(string id)
         {
-            var responseBooking = _unitOfWork.BookingRepository.GetByID(id);
-            return Ok(responseBooking);
+            var responseTransaction = _unitOfWork.TransactionRepository.GetByID(id);
+            return Ok(responseTransaction);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateTransaction(String id, RequestCreateTransactionModel requestModel)
+        {
+            var existedTransaction = _unitOfWork.TransactionRepository.GetByID(id);
+            if(existedTransaction != null)
+            {
+                existedTransaction.TotalSlot = requestModel.TotalSlot;
+                existedTransaction.TotalPrice = requestModel.TotalPrice;
+                existedTransaction.Status = requestModel.Status;
+                existedTransaction.BookingId = requestModel.BookingId;
+                existedTransaction.WalletId = requestModel.WalletId;
+                existedTransaction.DepositId = requestModel.DepositId;
+            }
+            _unitOfWork.TransactionRepository.Update(existedTransaction);
+            _unitOfWork.Save();
+            return Ok();
         }
     }
 }
