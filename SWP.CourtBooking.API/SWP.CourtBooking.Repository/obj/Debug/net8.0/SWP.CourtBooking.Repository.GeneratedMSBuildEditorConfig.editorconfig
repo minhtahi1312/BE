@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SWP.CourtBooking.Repository
-build_property.ProjectDir = D:\University\SWP391_Kỳ7\Git\BE\SWP.CourtBooking.API\SWP.CourtBooking.Repository\
+build_property.ProjectDir = E:\Github\BE\SWP.CourtBooking.API\SWP.CourtBooking.Repository\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
