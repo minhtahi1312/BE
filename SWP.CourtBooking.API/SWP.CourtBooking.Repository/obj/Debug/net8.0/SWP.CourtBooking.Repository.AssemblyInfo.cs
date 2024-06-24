@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SWP.CourtBooking.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31852ba2e13755435cab2689ebeb473c2ce9c132")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86f220f39bed8de4fb1b422042132a5237c854ce")]
 [assembly: System.Reflection.AssemblyProductAttribute("SWP.CourtBooking.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SWP.CourtBooking.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
