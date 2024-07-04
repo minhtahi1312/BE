@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SWP.CourtBooking.API.Models.BookingDetailModel;
+using SWP.CourtBooking.Repository.DTO.Booking;
+using SWP.CourtBooking.Repository.DTO.BookingDetail;
+using SWP.CourtBooking.Repository.Models;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -52,6 +55,34 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.BookingDetailRepository.Update(existedBookingDetail);
             _unitOfWork.Save();
             return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult AddBookingDetail([FromBody] BookingDetailDTO bookingDetail)
+        {
+            if (bookingDetail == null)
+            {
+                return BadRequest("BookingDetail data is null");
+            }
+
+            // Validate BookingDetailId presence
+            if (string.IsNullOrEmpty(bookingDetail.BookingDetailId))
+            {
+                return BadRequest("BookingDetailId is required for the Course");
+            }
+
+            var addBookingDetail = new BookingDetail
+            {
+                BookingDetailId = bookingDetail.BookingDetailId,
+                BookingId = bookingDetail.BookingId,
+                SlotId = bookingDetail.SlotId,
+                Price = bookingDetail.Price
+            };
+
+            _unitOfWork.BookingDetailRepository.Insert(addBookingDetail);
+            _unitOfWork.Save();
+
+            return Ok(bookingDetail);
         }
     }
 }
