@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SWP.CourtBooking.API.Models.CustomerModel;
+using SWP.CourtBooking.Repository.DTO.Court;
+using SWP.CourtBooking.Repository.DTO.Customer;
+using SWP.CourtBooking.Repository.Models;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -58,6 +61,34 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.CustomerRepository.Update(existedCustomer);
             _unitOfWork.Save();
             return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult AddCustomer([FromBody] CustomerDTO customer)
+        {
+            if (customer == null)
+            {
+                return BadRequest("Customer data is null");
+            }
+
+            var addCustomer = new Customer
+            {
+                CustomerId = customer.CustomerId,
+                Name = customer.Name,
+                Email = customer.Email,
+                Phone = customer.Phone,
+                Address = customer.Address,
+                Birthday = customer.Birthday,
+                Gender = customer.Gender,
+                IsActive = customer.IsActive,
+                Username = customer.Username,
+                Password = customer.Password
+            };
+
+            _unitOfWork.CustomerRepository.Insert(addCustomer);
+            _unitOfWork.Save();
+
+            return Ok(customer);
         }
     }
 }
