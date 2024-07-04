@@ -63,13 +63,13 @@ namespace SWP.CourtBooking.API.Controllers
         {
             if (court == null)
             {
-                return BadRequest("BookingDetail data is null");
+                return BadRequest("Court data is null");
             }
 
             // Validate CourtClusterId presence
             if (string.IsNullOrEmpty(court.CourtClusterId))
             {
-                return BadRequest("CourtClusterId is required for the CourtCluster");
+                return BadRequest("CourtClusterId is required for the Court");
             }
 
             var addCourt = new Court

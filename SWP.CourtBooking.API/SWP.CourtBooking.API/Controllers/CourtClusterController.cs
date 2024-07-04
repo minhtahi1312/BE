@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SWP.CourtBooking.API.Models.CourtClusterModel;
+using SWP.CourtBooking.Repository.DTO.Court;
+using SWP.CourtBooking.Repository.DTO.CourtCluster;
+using SWP.CourtBooking.Repository.Models;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -56,6 +59,39 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.CourtClusterRepository.Update(existedCourtCluster);
             _unitOfWork.Save();
             return Ok();
+        }
+
+
+        [HttpPost]
+        public IActionResult AddCourtCluster([FromBody] CourtClusterDTO courtCluster)
+        {
+            if (courtCluster == null)
+            {
+                return BadRequest("BookingDetail data is null");
+            }
+
+            // Validate UserId presence
+            if (string.IsNullOrEmpty(courtCluster.UserId))
+            {
+                return BadRequest("UserId is required for the CourtCluster");
+            }
+
+            var addCourtCluster = new CourtCluster
+            {
+                CourtClusterId = courtCluster.CourtClusterId,
+                Name = courtCluster.Name,
+                Price = courtCluster.Price,
+                Description = courtCluster.Description,
+                Status = courtCluster.Status,
+                Location = courtCluster.Location,
+                Image = courtCluster.Image,
+                UserId = courtCluster.UserId
+            };
+
+            _unitOfWork.CourtClusterRepository.Insert(addCourtCluster);
+            _unitOfWork.Save();
+
+            return Ok(courtCluster);
         }
     }
 }

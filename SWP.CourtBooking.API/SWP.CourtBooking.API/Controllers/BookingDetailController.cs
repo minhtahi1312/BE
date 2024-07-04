@@ -68,13 +68,13 @@ namespace SWP.CourtBooking.API.Controllers
             // Validate BookingId presence
             if (string.IsNullOrEmpty(bookingDetail.BookingId))
             {
-                return BadRequest("BookingId is required for the Booking");
+                return BadRequest("BookingId is required for the BookingDetail");
             }
 
             // Validate SlotId presence
             if (bookingDetail.SlotId == 0)
             {
-                return BadRequest("SlotId is required for the Slot");
+                return BadRequest("SlotId is required for the BookingDetail");
             }
 
             var addBookingDetail = new BookingDetail

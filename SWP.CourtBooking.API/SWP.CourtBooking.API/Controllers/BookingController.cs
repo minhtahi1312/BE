@@ -73,13 +73,13 @@ namespace SWP.CourtBooking.API.Controllers
             // Validate CustomerId presence
             if (string.IsNullOrEmpty(booking.CustomerId))
             {
-                return BadRequest("CustomerId is required for the Customer");
+                return BadRequest("CustomerId is required for the Booking");
             }
 
             // Validate CourtClusterId presence
             if (string.IsNullOrEmpty(booking.CourtClusterId))
             {
-                return BadRequest("CourtClusterId is required for the CourtCluster");
+                return BadRequest("CourtClusterId is required for the Booking");
             }
 
             var addBooking = new Booking
