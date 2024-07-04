@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61FCCA22-41B0-4238-9163-2B63FE0D39AA}|SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj|d:\\university\\swp391_k\u1EF37\\git\\be\\swp.courtbooking.api\\swp.courtbooking.api\\controllers\\bookingdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61FCCA22-41B0-4238-9163-2B63FE0D39AA}|SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj|solutionrelative:swp.courtbooking.api\\controllers\\bookingdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61FCCA22-41B0-4238-9163-2B63FE0D39AA}|SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj|d:\\university\\swp391_k\u1EF37\\git\\be\\swp.courtbooking.api\\swp.courtbooking.api\\controllers\\courtcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61FCCA22-41B0-4238-9163-2B63FE0D39AA}|SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj|solutionrelative:swp.courtbooking.api\\controllers\\courtcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CEEFBF5-424B-4000-B7CD-E8475D43A465}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|d:\\university\\swp391_k\u1EF37\\git\\be\\swp.courtbooking.api\\swp.courtbooking.repository\\dto\\bookingdetail\\bookingdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CEEFBF5-424B-4000-B7CD-E8475D43A465}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|solutionrelative:swp.courtbooking.repository\\dto\\bookingdetail\\bookingdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3CEEFBF5-424B-4000-B7CD-E8475D43A465}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|d:\\university\\swp391_k\u1EF37\\git\\be\\swp.courtbooking.api\\swp.courtbooking.repository\\dto\\court\\courtdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CEEFBF5-424B-4000-B7CD-E8475D43A465}|SWP.CourtBooking.Repository\\SWP.CourtBooking.Repository.csproj|solutionrelative:swp.courtbooking.repository\\dto\\court\\courtdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61FCCA22-41B0-4238-9163-2B63FE0D39AA}|SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj|d:\\university\\swp391_k\u1EF37\\git\\be\\swp.courtbooking.api\\swp.courtbooking.api\\controllers\\courtclustercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61FCCA22-41B0-4238-9163-2B63FE0D39AA}|SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj|solutionrelative:swp.courtbooking.api\\controllers\\courtclustercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61FCCA22-41B0-4238-9163-2B63FE0D39AA}|SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj|d:\\university\\swp391_k\u1EF37\\git\\be\\swp.courtbooking.api\\swp.courtbooking.api\\controllers\\bookingdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61FCCA22-41B0-4238-9163-2B63FE0D39AA}|SWP.CourtBooking.API\\SWP.CourtBooking.API.csproj|solutionrelative:swp.courtbooking.api\\controllers\\bookingdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CourtClusterController.cs",
+              "DocumentMoniker": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\Controllers\\CourtClusterController.cs",
+              "RelativeDocumentMoniker": "SWP.CourtBooking.API\\Controllers\\CourtClusterController.cs",
+              "ToolTip": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\Controllers\\CourtClusterController.cs",
+              "RelativeToolTip": "SWP.CourtBooking.API\\Controllers\\CourtClusterController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T03:28:45.55Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:6:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
@@ -58,28 +79,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookingDetailDTO.cs",
-              "DocumentMoniker": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\DTO\\BookingDetail\\BookingDetailDTO.cs",
-              "RelativeDocumentMoniker": "SWP.CourtBooking.Repository\\DTO\\BookingDetail\\BookingDetailDTO.cs",
-              "ToolTip": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\DTO\\BookingDetail\\BookingDetailDTO.cs",
-              "RelativeToolTip": "SWP.CourtBooking.Repository\\DTO\\BookingDetail\\BookingDetailDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T02:54:57.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "BookingDetailController.cs",
               "DocumentMoniker": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\Controllers\\BookingDetailController.cs",
               "RelativeDocumentMoniker": "SWP.CourtBooking.API\\Controllers\\BookingDetailController.cs",
               "ToolTip": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\Controllers\\BookingDetailController.cs",
               "RelativeToolTip": "SWP.CourtBooking.API\\Controllers\\BookingDetailController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAgwD8AAAANAAAA",
+              "ViewState": "AQIAADoAAAAAAAAAAAAiwFkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T02:54:08.086Z",
+              "WhenOpened": "2024-07-04T03:35:09.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CourtController.cs",
+              "DocumentMoniker": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\Controllers\\CourtController.cs",
+              "RelativeDocumentMoniker": "SWP.CourtBooking.API\\Controllers\\CourtController.cs",
+              "ToolTip": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.API\\Controllers\\CourtController.cs",
+              "RelativeToolTip": "SWP.CourtBooking.API\\Controllers\\CourtController.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAmwEkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T03:21:13.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CourtDTO.cs",
+              "DocumentMoniker": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\DTO\\Court\\CourtDTO.cs",
+              "RelativeDocumentMoniker": "SWP.CourtBooking.Repository\\DTO\\Court\\CourtDTO.cs",
+              "ToolTip": "D:\\University\\SWP391_K\u1EF37\\Git\\BE\\SWP.CourtBooking.API\\SWP.CourtBooking.Repository\\DTO\\Court\\CourtDTO.cs",
+              "RelativeToolTip": "SWP.CourtBooking.Repository\\DTO\\Court\\CourtDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T03:20:35.51Z",
               "EditorCaption": ""
             }
           ]

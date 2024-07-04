@@ -70,10 +70,16 @@ namespace SWP.CourtBooking.API.Controllers
                 return BadRequest("Booking data is null");
             }
 
-            // Validate BookingId presence
-            if (string.IsNullOrEmpty(booking.BookingId))
+            // Validate CustomerId presence
+            if (string.IsNullOrEmpty(booking.CustomerId))
             {
-                return BadRequest("BookingId is required for the Course");
+                return BadRequest("CustomerId is required for the Customer");
+            }
+
+            // Validate CourtClusterId presence
+            if (string.IsNullOrEmpty(booking.CourtClusterId))
+            {
+                return BadRequest("CourtClusterId is required for the CourtCluster");
             }
 
             var addBooking = new Booking

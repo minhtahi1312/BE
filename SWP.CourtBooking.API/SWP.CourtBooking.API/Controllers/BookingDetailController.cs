@@ -65,10 +65,16 @@ namespace SWP.CourtBooking.API.Controllers
                 return BadRequest("BookingDetail data is null");
             }
 
-            // Validate BookingDetailId presence
-            if (string.IsNullOrEmpty(bookingDetail.BookingDetailId))
+            // Validate BookingId presence
+            if (string.IsNullOrEmpty(bookingDetail.BookingId))
             {
-                return BadRequest("BookingDetailId is required for the Course");
+                return BadRequest("BookingId is required for the Booking");
+            }
+
+            // Validate SlotId presence
+            if (bookingDetail.SlotId == 0)
+            {
+                return BadRequest("SlotId is required for the Slot");
             }
 
             var addBookingDetail = new BookingDetail

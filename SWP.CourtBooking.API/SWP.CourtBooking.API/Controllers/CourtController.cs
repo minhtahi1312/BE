@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SWP.CourtBooking.API.Models.CourtModel;
+using SWP.CourtBooking.Repository.DTO.BookingDetail;
+using SWP.CourtBooking.Repository.DTO.Court;
+using SWP.CourtBooking.Repository.Models;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -53,6 +56,35 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.CourtRepository.Update(existedCourt);
             _unitOfWork.Save();
             return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult AddCourt([FromBody] CourtDTO court)
+        {
+            if (court == null)
+            {
+                return BadRequest("BookingDetail data is null");
+            }
+
+            // Validate CourtClusterId presence
+            if (string.IsNullOrEmpty(court.CourtClusterId))
+            {
+                return BadRequest("CourtClusterId is required for the CourtCluster");
+            }
+
+            var addCourt = new Court
+            {
+                CourtId = court.CourtId,
+                Name = court.Name,
+                Status = court.Status,
+                Description = court.Description,
+                CourtClusterId = court.CourtClusterId
+            };
+
+            _unitOfWork.CourtRepository.Insert(addCourt);
+            _unitOfWork.Save();
+
+            return Ok(court);
         }
     }
 }
