@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SWP.CourtBooking.API.Models.DepositModel;
+using SWP.CourtBooking.Repository.DTO.Customer;
+using SWP.CourtBooking.Repository.DTO.Deposit;
+using SWP.CourtBooking.Repository.Models;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -53,6 +56,35 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.DepositRepository.Update(existedDeposit);
             _unitOfWork.Save();
             return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult AddDeposit([FromBody] DepositDTO deposit)
+        {
+            if (deposit == null)
+            {
+                return BadRequest("Deposit data is null");
+            }
+
+            // Validate CustomerId presence
+            if (string.IsNullOrEmpty(deposit.CustomerId))
+            {
+                return BadRequest("CustomerId is required for the Deposit");
+            }
+
+            var addDeposit = new Deposit
+            {
+                DepositId = deposit.DepositId,
+                CustomerId = deposit.CustomerId,
+                Amount = deposit.Amount,
+                VnpayCode = deposit.VnpayCode,
+                Time = deposit.Time
+            };
+
+            _unitOfWork.DepositRepository.Insert(addDeposit);
+            _unitOfWork.Save();
+
+            return Ok(deposit);
         }
     }
 }
