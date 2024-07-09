@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SWP.CourtBooking.API.Models.WalletModel;
+using SWP.CourtBooking.Repository.DTO.Transaction;
+using SWP.CourtBooking.Repository.DTO.Wallet;
+using SWP.CourtBooking.Repository.Models;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -51,6 +54,33 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.WalletRepository.Update(existedWallet);
             _unitOfWork.Save();
             return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult AddWallet([FromBody] WalletDTO wallet)
+        {
+            if (wallet == null)
+            {
+                return BadRequest("Wallet data is null");
+            }
+
+            // Validate CustomerId presence
+            if (string.IsNullOrEmpty(wallet.CustomerId))
+            {
+                return BadRequest("CustomerId is required for the Wallet");
+            }
+
+            var addWallet = new Wallet
+            {
+                WalletId = wallet.WalletId,
+                CustomerId = wallet.CustomerId,
+                Amount = wallet.Amount
+            };
+
+            _unitOfWork.WalletRepository.Insert(addWallet);
+            _unitOfWork.Save();
+
+            return Ok(wallet);
         }
     }
 }
