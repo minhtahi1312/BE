@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SWP.CourtBooking.API.Models.UserModel;
+using SWP.CourtBooking.Repository.DTO.Transaction;
+using SWP.CourtBooking.Repository.DTO.User;
+using SWP.CourtBooking.Repository.Models;
 using SWP.CourtBooking.Repository.UnitOfWork;
 
 namespace SWP.CourtBooking.API.Controllers
@@ -58,6 +61,35 @@ namespace SWP.CourtBooking.API.Controllers
             _unitOfWork.UserRepository.Update(existedUser);
             _unitOfWork.Save();
             return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult AddUser([FromBody] UserDTO user)
+        {
+            if (user == null)
+            {
+                return BadRequest("User data is null");
+            }
+
+            var addUser = new User
+            {
+                UserId = user.UserId,
+                Name = user.Name,
+                Email = user.Email,
+                Phone = user.Phone,
+                Address = user.Address,
+                Birthday = user.Birthday,
+                Gender = user.Gender,
+                IsActive = user.IsActive,
+                Role = user.Role,
+                Username = user.Username,
+                Password = user.Password
+            };
+
+            _unitOfWork.UserRepository.Insert(addUser);
+            _unitOfWork.Save();
+
+            return Ok(user);
         }
     }
 }
